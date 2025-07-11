@@ -1,0 +1,7 @@
+baseURL = 'https://gossip.sigsegv.top/'
+languageCode = 'en-us'
+title = 'Gossip'
+theme = 'nostyleplease'
+
+[markup.goldmark.renderer]
+unsafe = true

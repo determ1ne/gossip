@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+<article>
+    <h1>{{ .Title }}</h1>
+    <div id="tag-container">
+    {{- range $tag := .Params.tags -}}
+        <a href="/tags/{{$tag}}" class="tag-link">#{{ $tag }}</a>
+    {{ end }}
+    </div>
+
+    {{ if .Params.toc }}
+        <aside {{ if .Params.tocBorder }} class="toc" {{ end }}>
+            {{ .TableOfContents }}
+        </aside>
+    {{ end }}
+
+    {{ .Content }}
+</article>
+{{ end }}

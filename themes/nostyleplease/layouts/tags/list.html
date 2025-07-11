@@ -1,0 +1,12 @@
+{{ define "main" }}
+{{ partial "back_link.html" . }}
+
+<h1>{{ .Title }}</h1>
+
+{{ range .Pages }}
+  <ul>
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  </ul>
+{{ end }}
+
+{{ end }}

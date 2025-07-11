@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{ partial "back_link.html" . }}
+
+<h1>{{ .Title }}</h1>
+
+{{- range (sort .Pages "Title" "asc") -}}
+  <ul class="tag-list">
+    <li>
+      <a href="{{ .Permalink }}">
+        {{ .Title }}
+      </a>
+    </li>
+  </ul>
+{{- end -}}
+
+{{ end }}
+
