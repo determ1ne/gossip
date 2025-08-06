@@ -4,7 +4,7 @@ draft = false
 title = 'macOS p12 file import "MAC verification failed"'
 tags = [
   'macOS',
-  'pki'
+  'pki',
 ]
 +++
 

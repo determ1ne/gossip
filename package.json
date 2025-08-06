@@ -1,0 +1,6 @@
+{
+  "name": "gossip",
+  "scripts": {
+    "build": "hugo --minify"
+  }
+}

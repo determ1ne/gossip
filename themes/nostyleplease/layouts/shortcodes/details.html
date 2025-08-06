@@ -2,5 +2,14 @@
     <summary>
         {{ .Get "summary" | default "Details:" }}
     </summary>
-    {{ .Inner | markdownify }}
+    {{ $file := .Get "file" }}
+    {{ if $file }}
+      {{ if strings.HasSuffix $file ".md" }}
+        {{ $file | readFile | markdownify }}
+      {{ else }}
+        {{ errorf "shortcode(details): Only markdown file is supported."}}
+      {{ end }}
+    {{ else }}
+      {{ .Inner | markdownify }}
+    {{ end }}
 </details>

@@ -1,0 +1,6 @@
+{{ $file := .Get 0 }}
+{{ if strings.HasSuffix $file ".md" }}
+  {{ $file | readFile | safeHTML }}
+{{ else }}
+  {{ errorf "shortcode(include): Only markdown file is supported."}}
+{{ end }}
